@@ -10,7 +10,7 @@ const Jumat = React.lazy(() => import("../components/Mapel/Jumat"))
 
 const Schedule = () => {
     // const daysOfWeek = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"]
-    const daysOfWeek = ["Senin", "Selasa", "Rabu", "Kamis", "Jumat", "Sabtu", "Minggu"]
+    const daysOfWeek = ["Minggu", "Senin", "Selasa", "Rabu", "Kamis", "Jumat", "Sabtu"]
     const currentDay = daysOfWeek[new Date().getDay()]
 
     useEffect(() => {
@@ -39,7 +39,7 @@ const Schedule = () => {
     ]
 
     // Menampilkan komponen berdasarkan hari saat ini
-    const TodayComponent = dayComponents[new Date().getDay()]
+    const TodayComponent = dayComponents[new Date().getDay() - 1]
 
     // Menampilkan nama-nama piket sesuai dengan hari saat ini
     const currentPiketNames = piketGroup[new Date().getDay() - 1]
